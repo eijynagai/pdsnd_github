@@ -16,25 +16,29 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     city = None
     while city not in CITY_DATA.keys():
-        city = input("Please insert a valid city (chicago, new york city, washington): ")
+        city = input("Please insert a valid city (Chicago, New York City, Washington): ").lower()
+        if city not in CITY_DATA.keys():
+            print('Please type again, something was wrong.')
 
-    # TO DO: get user input for month (all, january, february, ... , june)
     month = None
     valid_months = ('all', 'january', 'february', 'march', 'april', 'may', 'june')
     while month not in valid_months:
-        month = input("Please insert a month within january-june or all: ")
+        month = input("Please insert a month within January-June or all: ").lower()
+        if month not in valid_months:
+            print('Please type again, something was wrong.')
 
-    # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     day = None
     valid_weekdays = ('all', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday')
     while day not in valid_weekdays:
-        day = input("Please insert a specific weekday or all: ")
+        day = input("Please insert a specific weekday or all: ").lower()
+        if day not in valid_weekdays:
+            print('Please type again, something was wrong.')
 
     print('-'*40)
     return city, month, day
+
 
 
 def load_data(city, month, day):
