@@ -179,6 +179,15 @@ def main():
         trip_duration_stats(df)
         user_stats(df, city)
 
+        # Display five lines of data if the user specifies that
+        raw_data = input('Raw data will be displayed unless you type "quit":')
+        lines = 0
+        while raw_data != 'quit':
+            for i in range(lines,lines+5):
+                print(df.iloc[i])
+            lines += 5
+            raw_data = input('Press "enter" to keep displaying or "quit": ')
+
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
