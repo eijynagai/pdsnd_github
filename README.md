@@ -11,6 +11,6 @@ This project aims to give useful information on several data files collected fro
 * washington.csv
 
 ### Credits
-Luis Augusto Eijy Nagai
-Udacity
-Cheryl Liu (mentor)
+* Luis Augusto Eijy Nagai
+* Udacity
+* Cheryl Liu (mentor)
